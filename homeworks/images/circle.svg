@@ -1,0 +1,11 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="662" height="237" style="
+        width:662px;
+        height:237px;
+        background: transparent;
+        fill: none;
+">
+        
+        
+        <svg xmlns="http://www.w3.org/2000/svg" class="role-diagram-draw-area"><g class="shapes-region" style="stroke: black; fill: none;"><g class="composite-shape"><path class="real" d=" M154,-358 L204,-358 L204,-308 L154,-308 Z" style="stroke-width: 1px; stroke: rgb(0, 0, 0); fill: none; fill-opacity: 1;"/></g><g class="composite-shape"><path class="real" d=" M253.47,25.29 C305.36,-9.38 375.53,4.58 410.21,56.47 C444.88,108.36 430.92,178.53 379.03,213.21 C327.14,247.88 256.97,233.92 222.29,182.03 C187.62,130.14 201.58,59.97 253.47,25.29 Z" style="stroke-width: 2px; stroke: rgb(0, 0, 0); fill: rgb(253, 220, 171); fill-opacity: 0.78;"/></g><g class="arrow-line"><path class="connection real" stroke-dasharray="" d="  M410.21,56.47 L222.29,182.03" style="stroke: rgb(0, 0, 0); stroke-width: 4px; fill: none; fill-opacity: 1;"/></g><g class="arrow-line"><path class="connection real" stroke-dasharray="" d="  M426.79,137.09 L316.25,119.25" style="stroke: rgb(0, 0, 0); stroke-width: 4px; fill: none; fill-opacity: 1;"/></g><g/></g><g/><g/><g/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="660" height="235" style="width:660px;height:235px;font-family:Asana-Math, Asana;background:transparent;"><g><g><g><text x="247.875" y="130" style="white-space:pre;stroke:none;fill:rgb(0,0,0);fill-opacity:1;font-size:21.600000381469727px;font-family:Arial, Helvetica, sans-serif;font-weight:normal;font-style:normal;dominant-baseline:text-before-edge;text-decoration:none;">d</text></g></g></g><g><g><g><text x="374.390625" y="131.15625" style="white-space:pre;stroke:none;fill:rgb(0,0,0);fill-opacity:1;font-size:21.600000381469727px;font-family:Arial, Helvetica, sans-serif;font-weight:normal;font-style:normal;dominant-baseline:text-before-edge;text-decoration:none;">r</text></g></g></g></svg>
+</svg>

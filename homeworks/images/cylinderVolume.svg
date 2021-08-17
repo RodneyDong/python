@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Creator: CorelDRAW Home & Student X7 -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xml:space="preserve"
+   width="70.317467mm"
+   height="34.131046mm"
+   version="1.1"
+   style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+   viewBox="0 0 31534.195 15305.932"
+   id="svg41"
+   sodipodi:docname="cylinder-formula.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"><metadata
+   id="metadata45"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1017"
+   id="namedview43"
+   showgrid="false"
+   inkscape:zoom="1.8294601"
+   inkscape:cx="201.97632"
+   inkscape:cy="64.499614"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg41" />
+ <defs
+   id="defs19">
+  <font
+   id="FontID0"
+   horiz-adv-x="666"
+   font-variant="normal"
+   font-style="normal"
+   font-weight="400"
+   horiz-origin-x="0"
+   horiz-origin-y="0"
+   vert-origin-x="45"
+   vert-origin-y="90"
+   vert-adv-y="90">
+	<font-face
+   font-family="Arial"
+   id="font-face2">
+	</font-face>
+   <missing-glyph
+   id="missing-glyph6"><path
+     d="M0 0z"
+     id="path4" /></missing-glyph>
+   <glyph
+   unicode="h"
+   horiz-adv-x="556"
+   id="glyph10"><path
+     d="M66.0005 0l0 715.99 87.9928 0 0 -257.648c40.8428,47.835 92.3393,71.6462 154.678,71.6462 38.1499,0 71.3391,-7.48825 99.6622,-22.6537 28.1577,-15.1655 48.3311,-36.0003 60.4965,-62.6698 12.1655,-26.6695 18.1655,-65.5045 18.1655,-116.174l0 -328.491 -87.9928 0 0 328.16c0,43.8429 -9.49614,75.851 -28.3467,95.8354 -18.9923,20.008 -45.6618,30.0002 -80.3156,30.0002 -25.8427,0 -50.1736,-6.66147 -73.0163,-20.1734 -22.8191,-13.4883 -39.0003,-31.8191 -48.8272,-54.9926 -9.66149,-23.0081 -14.5041,-54.8272 -14.5041,-95.5047l0 -283.325 -87.9928 0z"
+     id="path8" /></glyph>
+   <glyph
+   unicode="r"
+   horiz-adv-x="333"
+   id="glyph14"><path
+     d="M65.0084 0l0 519.004 78.9927 0 0 -79.5124c20.1734,36.8507 38.835,61.1816 56.0083,72.851 17.1497,11.8347 36.0003,17.6458 56.4808,17.6458 29.6695,0 59.8351,-9.33078 90.5204,-27.827l-31.3467 -81.166c-21.3309,12.0001 -42.6618,18.0001 -63.9926,18.0001 -19.1813,0 -36.331,-5.83469 -51.4965,-17.3387 -15.1655,-11.4804 -26.0081,-27.4963 -32.5042,-48.0004 -9.82685,-31.1577 -14.6694,-65.3155 -14.6694,-102.497l0 -271.16 -87.9928 0z"
+     id="path12" /></glyph>
+  </font>
+  <style
+   type="text/css"
+   id="style17">
+   <![CDATA[
+    @font-face { font-family:"Arial";src:url("#FontID0") format(svg)}
+    .str1 {stroke:black;stroke-width:224.227}
+    .str0 {stroke:black;stroke-width:89.6906;stroke-dasharray:448.453197 448.453197}
+    .fil0 {fill:none}
+    .fil2 {fill:black}
+    .fil1 {fill:black;fill-rule:nonzero}
+    .fnt0 {font-weight:normal;font-size:1898.44px;font-family:'Arial'}
+   ]]>
+  </style>
+ </defs>
+ <g
+   id="Layer_x0020_1"
+   transform="translate(16398.223,-0.03376443)">
+  <metadata
+   id="CorelCorpID_0Corel-Layer" />
+  <path
+   class="fil0 str0"
+   d="m 363,12912 c 794,-903 3480,-1531 6547,-1531 3560,0 6514,839 6762,1921"
+   id="path22"
+   inkscape:connector-curvature="0"
+   style="fill:none;stroke:#000000;stroke-width:89.69059753;stroke-dasharray:448.453197, 448.453197" />
+  <path
+   class="fil0 str1"
+   d="m 13691,13427 c 0,976 -3035,1767 -6778,1767 -3744,0 -6778,-791 -6778,-1767"
+   id="path24"
+   inkscape:connector-curvature="0"
+   style="fill:none;stroke:#000000;stroke-width:224.227005" />
+  <g
+   id="g28">
+   <path
+   class="fil1"
+   d="m 6943,1800 h 6817 v 89 H 6943 Z m 173,224 h -346 v -359 h 346 z"
+   id="path26"
+   inkscape:connector-curvature="0"
+   style="fill:#000000;fill-rule:nonzero" />
+  </g>
+  <text
+   x="8549"
+   y="1727"
+   class="fil2 fnt0"
+   id="text30"
+   style="font-weight:normal;font-size:1898.43994141px;font-family:Arial;fill:#000000">r</text>
+
+  <text
+   x="14209"
+   y="8514"
+   class="fil2 fnt0"
+   id="text32"
+   style="font-weight:normal;font-size:1898.43994141px;font-family:Arial;fill:#000000">h</text>
+
+  <ellipse
+   class="fil0 str1"
+   cx="6941"
+   cy="1879"
+   rx="6778"
+   ry="1767"
+   id="ellipse34"
+   style="fill:none;stroke:#000000;stroke-width:224.227005" />
+  <line
+   class="fil0 str1"
+   x1="163"
+   y1="1879"
+   x2="112"
+   y2="13450"
+   id="line36"
+   style="fill:none;stroke:#000000;stroke-width:224.227005" />
+  <line
+   class="fil0 str1"
+   x1="13719"
+   y1="1879"
+   x2="13719"
+   y2="13450"
+   id="line38"
+   style="fill:none;stroke:#000000;stroke-width:224.227005" />
+ </g>
+<text
+   style="font-weight:normal;font-size:1897.77661133px;font-family:Arial;clip-rule:evenodd;fill:#000000;fill-rule:evenodd;stroke-width:15.10379314;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+   id="text32-7"
+   class="fil1 fnt0"
+   y="9181.8047"
+   x="-8.339839">V = h⋅π⋅r² </text>
+</svg>
