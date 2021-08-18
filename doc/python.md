@@ -1,4 +1,17 @@
-<h1>python class notes</h1>
+<h1>Python Class Notes</h1>
+
+- [python language basics](#python-language-basics)
+- [My First python program](#my-first-python-program)
+- [getting start](#getting-start)
+- [print](#print)
+- [comment](#comment)
+- [Variable Naming](#variable-naming)
+  - [Variable and memory](#variable-and-memory)
+- [Data Type](#data-type)
+- [operator](#operator)
+- [Execution Control (If-else)](#execution-control-if-else)
+- [Loop](#loop)
+- [Function](#function)
 
 
 ## python language basics
@@ -7,12 +20,18 @@
 ## My First python program
 [hello world](../src/hello.py)
 
+## getting start
+❓ 
+✔️
 ## print
 [print](../src/print.py)
 - place holder (%s, %d, %f)
 - print with tuple
 - formated print: print(f"x={x}") 
 
+* \n is escape sequence, which means a new line character is added
+* \t is escape sequence, which means a tab character is inserted
+  
 ## comment 
 [comment](../src/comment.py)
 * single line comment: #
