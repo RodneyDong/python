@@ -10,7 +10,7 @@ for item in s:
 print(s[0:6])
 print(s[4:9])
 print(s[1:100])
-print(s[1:100:2]) # s[[start]:[stop]:[step]]
+print(s[1:100:2]) # s[[start]:[stop]:[step]], by default start=0, stop=len(s), ste1
 print(s[::])
 print(s[-1]) # get last character in the string s
 print(s[::-1])

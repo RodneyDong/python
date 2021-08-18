@@ -38,6 +38,8 @@ Help on built-in function print in module builtins:
 print(...)
     print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
 ```
+❓ How do I find all functions for **str**?
+✔️
 
 ## print
 [print](../src/print.py)

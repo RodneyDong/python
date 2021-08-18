@@ -10,6 +10,7 @@ print(x)
 # area = width *  length
 # print("The rectangle area with width=%d and length=%d is %d." %(width, length, area))
 # print(f"The rectangle area with width={width} and length={length} is {area}.")
+# print(f"The rectangle area with width={width} and length={length} is {area:.1f}.")
 # a = 2020
 # b = 2000
 # c = a-b
@@ -23,3 +24,4 @@ print(x)
 # # %s is a first placeholder which holds a string
 # print("%s is %d years old." %(name,age))
 # print("after 5 years you will be %d years old." %(age+5))
+
