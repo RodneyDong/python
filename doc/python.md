@@ -40,8 +40,6 @@ otherwise, your python builtins functions no longer works the way you expected.
 
 ![](images/LanguageBasics.svg)
 
----
-[Table of Contents](#table-of-contents)
 
 ## Data Type
 * [Numbers](../src/number.py)
