@@ -21,8 +21,24 @@
 [hello world](../src/hello.py)
 
 ## getting start
-❓ 
-✔️
+❓ How do I open python playground?
+✔️ open new terminal
+```
+C:\Users\12818\workspace\Rodney\python>python
+Python 3.9.1 (tags/v3.9.1:1e5d33e, Dec  7 2020, 17:08:21) [MSC v.1927 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+❓ How do I read help document in python
+✔️ document for **print** function
+```
+>>> help(print)
+Help on built-in function print in module builtins:
+
+print(...)
+    print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+```
+
 ## print
 [print](../src/print.py)
 - place holder (%s, %d, %f)
