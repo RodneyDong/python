@@ -1,6 +1,6 @@
 primeList = []
 prime = True
-for x in range (40,50):
+for x in range (0,50):
     for i in range (2,10):
         if (x % i) == 0:
             prime = False
