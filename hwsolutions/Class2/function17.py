@@ -18,19 +18,16 @@ def has_two_digits (a):
     if count >= 2:
         return True
     return False
-def passwordInput():
-    password = input("Input a password：")
-    return password
 def passwordCheck():
     while True:
-        password = passwordInput()
+        password = input("Input a password：")
         x = is_only_letter_digit(password)
         y = is_eight_characters(password)
         z = has_two_digits(password)
-        if (x == True) and (y == True) and (z == True):
+        if x and y and z:
             print (password,' is a valid password')
             break
-        else:
-            print(password, ' is not a valid password. Please re-enter')
+        print(password, ' is not a valid password. Please re-enter')
+
 if __name__ == '__main__':
     passwordCheck()
