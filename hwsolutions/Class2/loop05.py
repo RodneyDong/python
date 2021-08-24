@@ -15,9 +15,7 @@ a = normalList(num1,num2)
 b = reverseList(num1,num2)
 x = '* '
 z = ' '
-print(a)
-print(b)
 for y in a:
     print(z*(max(a)-y),x*y)
-for i in b:
-    print(z*(max(b)-i+1),x*i)
+for y in b:
+    print(z*(max(b)-y+1),x*y)
