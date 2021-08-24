@@ -1,14 +1,8 @@
 def recursive(a):
-    score = 0
-    for x in range (len(a)):
-        score += a[x]
-    return score
-def input1():
-    print("Calculates sum of number from x to y:")
-    x = int(input("x:"))
-    y = int(input("y:"))
-    numbers = []
-    for i in range(x,y+1):
-        numbers.append(i)
-    return numbers
-print("The anwser is: ",recursive(input1()))
+    if a == 0: # 终止条件
+        return 0
+    return a + recursive(a-1) # 调整变量
+
+if __name__ == '__main__': # test code block    
+    x = recursive(10)
+    print(x)

@@ -5,4 +5,4 @@ def cylinderVolume(r,h):
 radius = 10
 height = 10
 ans = cylinderVolume(radius,height)
-print("Cylinder volume with radius {} and height {} is {}".format(radius,height,ans))
+print("Cylinder volume with radius {0} and height {1} is {2}".format(radius,height,ans))

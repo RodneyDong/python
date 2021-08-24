@@ -5,4 +5,5 @@ def triangle_area (b,h):
 if __name__ == "__main__":
     base = 10
     height = 15
-    print(triangle_area(base,height))
+    area = triangle_area(base,height)
+    print(f"The trianger area with base={base} and height={height} is {area}.")
