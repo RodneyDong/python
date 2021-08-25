@@ -12,6 +12,7 @@
 - [Execution Control (If-else)](#execution-control-if-else)
 - [Loop](#loop)
 - [Function](#function)
+- [OOP (object oriented programming)](#oop-object-oriented-programming)
 
 
 
@@ -249,3 +250,33 @@ $$
 * [return function dynamically](../src/returnFunction.py)
 >part of Functional programming which focus on goal
 * [Functional programming basic](../src/passFunction.py)
+
+## OOP (object oriented programming)
+[](images/oop.png)
+❓ What is abstractons?
+✔️ class in python is an abstraction of object in real world which includes 1.name 2.field 3.function
+
+❓ What is inheritence?
+✔️subclass inherits everything defined in superclass
+```mermaid
+classDiagram
+
+class Person{
+    name:str
+    age:int
+    ssn:str
+    sayHello()
+}
+
+class Student{
+    id: int
+    turnInHw()
+    practice()
+}
+Person <|--Student:Is Relationship
+```
+❓What is encapsulation?
+✔️
+
+❓What is polymorphism?
+✔️

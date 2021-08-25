@@ -60,6 +60,43 @@ else:
 
 print(days)
 
-
 # dict CRUD (Create, Receive, Update, Delete)
+
+# Dict is mutable (changable)
+
+# get() to receive and dictName[] to add
+post['userId'] = 1234 # Add another value to existing dictionary
+
+# If value inside post[] is the same, it only updates the dictionary
+post['language'] = 'Chinese' # Before, it is 'language' = 'english' after this, it is 'language' = 'Chinese'
+
 print('done.')
+
+# Check for existing key
+if 'location' in post:
+    print(post['location'])
+else:
+    print(f"no 'location' key in dict")
+
+# nested dictionary
+d1 = {'k1':'value1'}
+d2 = {'k2':'value2'}
+d1['k3'] = d2
+print(d1)
+# Dict do not support + operation
+# If you want to plus, see below
+d = {**d1, **d2}
+print(d)
+
+# dictionary functions
+# get(); ex: d.get('k2’，100)
+# if 'k2' does not exit is dictionary, it will return 100
+
+#items(); ex: d.items()
+# returna s list of tuples with key-value pair, where x is mutable
+#Normally, for loop -- print() the dictionary will not show the value
+
+#keys(): d.keys()
+# prints the keys
+
+#pop() - removes a value from the dict
