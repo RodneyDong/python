@@ -275,8 +275,19 @@ class Student{
 }
 Person <|--Student:Is Relationship
 ```
+[](../src/class/student.py)
 ❓What is encapsulation?
-✔️
+✔️A private variable that cannot be accessed outside, so the attribute canot be changed
 
 ❓What is polymorphism?
 ✔️
+## class basic:
+[Simple Class](../src/class/class01.py)
+[Define a function outside of class](../src/class/class02.py)
+[Define a function inside class and self](../src/class/class03.py)
+[Define __init__(self, name)](../src/class/class04.py)
+[Use keyword argument in __init__](../src/class/class05.py)
+[Encapsulation](../src/class/class07.py)
+
+## dunder function
+[__repr_(), __str__(), __len__()](../src/class/class06.py)
