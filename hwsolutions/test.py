@@ -1,3 +1,3 @@
-y = 'XCDOED'
-y = y.replace('X','')
+
+y = int('4000b',base=0)
 print(y)

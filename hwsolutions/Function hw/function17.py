@@ -13,7 +13,7 @@ def has_two_digits (a):
     count = 0
     for x in a:
         z = x.isdigit()
-        if z == True:
+        if z:
             count += 1
     if count >= 2:
         return True

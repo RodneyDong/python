@@ -35,8 +35,18 @@ def listToDict (a):
     return b
 
 if __name__ == '__main__':
-    sentenceWords = convertToWords(sentence)
-    singleWords = removeMultipleWords(sentenceWords)
-    tupleList = tupleList(singleWords, sentenceWords)
-    finalResult = listToDict(tupleList)
-    print(finalResult)
+    #sentenceWords = convertToWords(sentence)
+    #singleWords = removeMultipleWords(sentenceWords)
+    #tupleList = tupleList(singleWords, sentenceWords)
+    #finalResult = listToDict(tupleList)
+    #print(finalResult)
+    x = sentence.split()
+    d = {}
+    for i in x:
+        if i.endswith(',') or i.endswith('.'):
+            i = i[:len(i)-1]
+        if i in d:
+            d[i] = d.get(i)+1 # get the existing value and add 1, put it back
+        else:
+            d[i] = 1 # create key-value pair and give default value
+    print(d) 
