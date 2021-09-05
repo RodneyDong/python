@@ -288,6 +288,12 @@ Person <|--Student:Is Relationship
 [Define __init__(self, name)](../src/class/class04.py)
 [Use keyword argument in __init__](../src/class/class05.py)
 [Encapsulation](../src/class/class07.py)
+[use property](../src/class/class08.py)
 
 ## dunder function
 [__repr_(), __str__(), __len__()](../src/class/class06.py)
+[understand __new__(), __init__()](../src/class/class09.py)
+1. avoid override __new__(cls)
+2. if you do, make sure it is the same argument as __init__()
+3. __new__() return an object
+4. __init__() return None

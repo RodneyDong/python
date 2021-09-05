@@ -26,7 +26,7 @@ class romanNumerals:
         return ans
     def romanNumeralToNumbers (self,a): # a is the Roman Numeral received
         ans = 0
-        
+
         while len(a) > 0:
             for x in a:
                 for y in self.letters:
@@ -38,7 +38,7 @@ class romanNumerals:
         return ans
 if __name__ == '__main__':
     r = romanNumerals()
-    number = 676
+    number = 343
     romanNumeral = 'DCLXXVI'
     ans1 = r.numbersToRomanNumeral(number)
     ans2 = r.romanNumeralToNumbers(romanNumeral)
