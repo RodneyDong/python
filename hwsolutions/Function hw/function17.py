@@ -12,12 +12,9 @@ def is_eight_characters (a):
 def has_two_digits (a):
     count = 0
     for x in a:
-        z = x.isdigit()
-        if z:
+        if x.isdigit():
             count += 1
-    if count >= 2:
-        return True
-    return False
+    return count >= 2
 def passwordCheck():
     while True:
         password = input("Input a password：")

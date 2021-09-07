@@ -1,3 +1,6 @@
+class Rod():
+    def __init__ (self):
+        print('init')
 
-y = int('4000b',base=0)
-print(y)
+if __name__ == '__main__':
+    r = Rod()

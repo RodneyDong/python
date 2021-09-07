@@ -13,7 +13,8 @@
 - [Loop](#loop)
 - [Function](#function)
 - [OOP (object oriented programming)](#oop-object-oriented-programming)
-
+- [class](#class-basic)
+- [dunder](#dunder-function)
 
 
 ## python language basics
@@ -275,7 +276,8 @@ class Student{
 }
 Person <|--Student:Is Relationship
 ```
-[](../src/class/student.py)
+[inheritence](../src/class/student.py)
+
 ❓What is encapsulation?
 ✔️A private variable that cannot be accessed outside, so the attribute canot be changed
 
@@ -297,3 +299,9 @@ Person <|--Student:Is Relationship
 2. if you do, make sure it is the same argument as __init__()
 3. __new__() return an object
 4. __init__() return None
+[Good sample for voerride __new__](../src/class/class10.py)[Class enumeration for multiple items]
+
+## attribute scope
+[class level attribute](../src/class/class11.py)
+[instance level attribute](../src/class/class12.py)
+[class level constant attribute](../src/class/enum1.py)
