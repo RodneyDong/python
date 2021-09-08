@@ -31,6 +31,7 @@ deck = []
 for suit in suits:
     for face in faces:
         deck.append(Fore.BLACK + "[" + face + suit + Fore.BLACK + "]")
+
 line = 0
 for card in deck:
     print(card, end = " ")
