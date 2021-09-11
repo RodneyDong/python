@@ -1,6 +1,9 @@
-class Rod():
-    def __init__ (self):
-        print('init')
+dict1 = {
+    'playerOne':2,
 
-if __name__ == '__main__':
-    r = Rod()
+}
+list1 = []
+
+for x in range (len(dict1)):
+    print("dope")
+print(dict1)

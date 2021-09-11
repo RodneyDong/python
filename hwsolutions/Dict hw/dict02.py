@@ -3,7 +3,8 @@ vehicle = {
     "year" : "2021",
     "mileage" : "40000"
 }
-a = vehicle.get("year")
+x = 'year'
+a = vehicle.get(x)
 print(f"The year of the vehicle is: {a}")
 vehicle["year"] = 2020
 vehicle["type"] = "motorcycle"

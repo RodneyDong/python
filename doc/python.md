@@ -13,8 +13,10 @@
 - [Loop](#loop)
 - [Function](#function)
 - [OOP (object oriented programming)](#oop-object-oriented-programming)
-- [class](#class-basic)
-- [dunder](#dunder-function)
+  - [class basic:](#class-basic)
+  - [dunder function](#dunder-function)
+  - [attribute scope](#attribute-scope)
+  - [class tricks](#class-tricks)
 
 
 ## python language basics
@@ -237,9 +239,7 @@ that is used to perform a single, related action.
     - 💡Single response, do single thing
     - ❗️❗️call a function by function name and () no matter it has arguments or not, and arguments if thers is any
 
-$$
-\underbrace {def}_{keyword} \underbrace {circle \_area}_{function \space name} \left(\underbrace {a, b,c ...}_{positional\; args} * \underbrace {e=None, f=200}_{keyword\;args}\right) \underbrace {:}_{eol}
-$$
+$$\underbrace {def}_{keyword} \underbrace {circle \_area}_{function \space name} \left(\underbrace {a, b,c ...}_{positional\; args} * \underbrace {e=None, f=200}_{keyword\;args}\right) \underbrace {:}_{eol}$$
 
 * [function.py](../src/function.py)
 * [argument.py](../src/argument.py)
@@ -283,7 +283,7 @@ Person <|--Student:Is Relationship
 
 ❓What is polymorphism?
 ✔️
-## class basic:
+### class basic:
 [Simple Class](../src/class/class01.py)
 [Define a function outside of class](../src/class/class02.py)
 [Define a function inside class and self](../src/class/class03.py)
@@ -292,7 +292,7 @@ Person <|--Student:Is Relationship
 [Encapsulation](../src/class/class07.py)
 [use property](../src/class/class08.py)
 
-## dunder function
+### dunder function
 [__repr_(), __str__(), __len__()](../src/class/class06.py)
 [understand __new__(), __init__()](../src/class/class09.py)
 1. avoid override __new__(cls)
@@ -301,7 +301,11 @@ Person <|--Student:Is Relationship
 4. __init__() return None
 [Good sample for voerride __new__](../src/class/class10.py)[Class enumeration for multiple items]
 
-## attribute scope
+### attribute scope
 [class level attribute](../src/class/class11.py)
 [instance level attribute](../src/class/class12.py)
 [class level constant attribute](../src/class/enum1.py)
+
+### class tricks
+[define outside function for class](../src/class/class13.py)
+[internal function call another internal function](../src/class/class14.py)
