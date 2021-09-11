@@ -38,16 +38,19 @@ class Game():
         cardValue = self.d.faces.get(card)
         return cardValue
     
-    def hit(self, player):
-        self.d.createDeck()
-        card = self.getCard(self.d.deck)
-        print(f"{player} got the card: {card}")
+    def hit(self, player,deck,cardList):
+        card = self.getCard(deck)
+        if player == 'dealer':
+            print("The dealer got a card")
+        else:
+            print(f"{player} got the card: {card}")
+        cardList[player].append(card)
         value = self.getValue(card[1]) # Because the card is in tuple form and I only want the face, which is in index 1
         return value #prints card and return card value
 
     def checkWinner (self,scoreSheet): #scoreSheet has to be a dict
         if len(scoreSheet) == 1:
-            print(f'the winner is {scoreSheet}')
+            return f'the winner is {scoreSheet}'
         values = scoreSheet.values()
         for x in list(values):
             if x == 0:
@@ -58,16 +61,11 @@ class Game():
             if max(list(values)) == scoreSheet.get(x):
                 return (f'{x} is the winner')
     
-    def checkBust (self,scoreSheet): #returns a list name of busted player's name
-        bustedNameList = []
-        values = scoreSheet.values()
-        for x in scoreSheet:
-            if scoreSheet.get(x) > 21:
-                print(f'{x} is busted')
-                bustedNameList.append(x)
-        if bustedNameList == []: # If no busted players, return nothing
-            bustedNameList = False
-        return bustedNameList
+    def checkBust (self,scoreSheet, player): #returns a list name of busted player's name
+        if scoreSheet.get(player) > 21:
+            print(f'{player} is busted')
+            return player
+        return False
 
     def createPlayersScoreSheet(self):
         scoreSheet = {
@@ -84,10 +82,8 @@ class Game():
                 print('Invalid Input')
         return scoreSheet
     
-    def deletBustedPlayers(self, scoreSheet,bustedNameList):#Receives a dict and a list, then delets every value of list in dict
-        for x in bustedNameList:
-            if x in scoreSheet:
-                del scoreSheet[x]
+    def deletBustedPlayers(self, scoreSheet,bustedPlayer):#Receives a dict and a list, then delets every value of list in dict
+        del scoreSheet[bustedPlayer]
         return scoreSheet
     
     def dealerHit(self, scoreSheet):
@@ -97,31 +93,47 @@ class Game():
             return 'h'
         return 's'
 
+    def showResult(self, scoreSheet, winner,cardList):
+        for x in cardList:
+            print(f'{x} got the cards: {cardList.get(x)}')
+            print(f'{x} scored: {scoreSheet.get(x)}')
+        print("----------------------")
+        print(f"{winner}!")
+        print("GAMEOVER")
+    
+    def createCardDict(self,scoreSheet):
+        cardList = {}
+        for x in scoreSheet:
+            cardList[x] = []
+        return cardList
+
     def mainGame (self):
+        self.d.createDeck()
         scoreSheet = self.createPlayersScoreSheet()
-        while len(scoreSheet) > 0:
+        playerCardList = self.createCardDict(scoreSheet)
+        while True:
             for player in scoreSheet:
-                roundCount = 0
-                while True:
-                    ans = input(f"{player}'s turn hit or stand? (h/s): ")
-                    if ans.lower() == 'h':
-                        roundCount += 1
-                        playerScore = self.hit(player)
-                        scoreSheet[player] += playerScore
-                        if roundCount > 1:
-                            bustedPlayerList = self.checkBust(scoreSheet)
-                            if bustedPlayerList:
-                                self.deletBustedPlayers(scoreSheet, bustedPlayerList)
+                if scoreSheet.get(player) == 0:
+                    while True:
+                        if player == 'dealer':
+                            ans = self.dealerHit(scoreSheet)
+                        else:
+                            ans = input(f"{player}'s turn hit or stand? (h/s): ")
+                        if ans.lower() == 'h':
+                            playerScore = self.hit(player,self.d.deck,playerCardList)
+                            scoreSheet[player] += playerScore
+                            if self.checkBust(scoreSheet,player):
+                                self.deletBustedPlayers(scoreSheet, player)
                                 break
-                    if ans.lower() == 's':
+                        if ans.lower() == 's':
+                            if scoreSheet.get(player) == 0:
+                                self.deletBustedPlayers(scoreSheet, player)
+                            break
+                    if player not in scoreSheet: #If someone is busted, breaks for loop and loop back to the while loop at the top
                         break
-                if bustedPlayerList:
-                    break
             winner = self.checkWinner(scoreSheet)
             if winner:
-                print(scoreSheet)
-                print(winner)
-                print("GAMEOVER")
+                self.showResult(scoreSheet, winner, playerCardList)
                 return
 
 

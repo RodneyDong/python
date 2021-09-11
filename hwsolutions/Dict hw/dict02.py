@@ -1,11 +1,10 @@
 vehicle = {
-    "model" : "VX322",
+    "model" : [('VX322','dope')],
     "year" : "2021",
     "mileage" : "40000"
 }
 x = 'year'
 a = vehicle.get(x)
-print(f"The year of the vehicle is: {a}")
-if vehicle["year"]
-vehicle["type"] = "motorcycle"
+dict1 = vehicle
+print(dict1)
 print(vehicle)
