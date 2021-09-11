@@ -5,9 +5,9 @@ class Deck:
         self.deck = []
         self.faces = {
             'A' : 1,
-            'K' : 13,
-            'Q' : 12,
-            'J' : 11,
+            'K' : 10,
+            'Q' : 10,
+            'J' : 10,
             '10': 10,
             '9' : 9,
             '8' : 8,
@@ -35,10 +35,8 @@ class Game():
         return card
 
     def getValue(self, card):
-        for x in self.d.faces:
-            if x == card:
-                cardValue = self.d.faces.get(x)
-                return cardValue
+        cardValue = self.d.faces.get(card)
+        return cardValue
     
     def hit(self, player):
         self.d.createDeck()
@@ -91,6 +89,13 @@ class Game():
             if x in scoreSheet:
                 del scoreSheet[x]
         return scoreSheet
+    
+    def dealerHit(self, scoreSheet):
+        if scoreSheet.get('dealer') == 0:
+            return 'h'
+        if scoreSheet.get('dealer') <= 11:
+            return 'h'
+        return 's'
 
     def mainGame (self):
         scoreSheet = self.createPlayersScoreSheet()

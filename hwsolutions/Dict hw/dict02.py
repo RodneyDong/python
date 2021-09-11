@@ -6,6 +6,6 @@ vehicle = {
 x = 'year'
 a = vehicle.get(x)
 print(f"The year of the vehicle is: {a}")
-vehicle["year"] = 2020
+if vehicle["year"]
 vehicle["type"] = "motorcycle"
 print(vehicle)
