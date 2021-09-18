@@ -26,9 +26,11 @@ class Deck:
                 self.deck.append((suit,face))
             random.shuffle(self.deck) # shuffle the deck
 
-class Game():
+class Game(Deck):
     def __init__(self):
         self.d = Deck()
+        self.scoreSheet = {}
+        self.playerCardList = {}
 
     def getCard(self, deck):
         card = deck.pop()
@@ -38,102 +40,105 @@ class Game():
         cardValue = self.d.faces.get(card)
         return cardValue
     
-    def hit(self, player,deck,cardList):
-        card = self.getCard(deck)
+    def hit(self, player):
+        card = self.getCard(self.d.deck)
         if player == 'dealer':
             print("The dealer got a card")
         else:
             print(f"{player} got the card: {card}")
-        cardList[player].append(card)
+        self.playerCardList[player].append(card)
         value = self.getValue(card[1]) # Because the card is in tuple form and I only want the face, which is in index 1
         return value #prints card and return card value
 
-    def checkWinner (self,scoreSheet): #scoreSheet has to be a dict
-        if len(scoreSheet) == 1:
-            return f'the winner is {scoreSheet}'
-        values = scoreSheet.values()
+    def checkWinner (self): #scoreSheet has to be a dict
+        if len(self.scoreSheet) == 1:
+            return f'the winner is {self.scoreSheet}'
+        values = self.scoreSheet.values()
         for x in list(values):
             if x == 0:
                 return False
-        for x in scoreSheet:
+        for x in self.scoreSheet:
             if max(list(values)) == min(list(values)):
                 return "This round is a tie"
-            if max(list(values)) == scoreSheet.get(x):
+            if max(list(values)) == self.scoreSheet.get(x):
                 return (f'{x} is the winner')
     
-    def checkBust (self,scoreSheet, player): #returns a list name of busted player's name
-        if scoreSheet.get(player) > 21:
+    def checkBust (self, player): #returns a list name of busted player's name
+        if self.scoreSheet.get(player) > 21:
             print(f'{player} is busted')
             return player
         return False
 
     def createPlayersScoreSheet(self):
-        scoreSheet = {
-            'dealer' : 0,
-        }
+        self.scoreSheet['dealer'] = 0
         while True:
             ans = input("More players? (y/n)")
             if ans.lower() == 'n':
                 break
             elif ans.lower() == 'y':
                 name = input("Player name: ")
-                scoreSheet[name] = 0
+                self.scoreSheet[name] = 0
             else:
                 print('Invalid Input')
-        return scoreSheet
     
-    def deletBustedPlayers(self, scoreSheet,bustedPlayer):#Receives a dict and a list, then delets every value of list in dict
-        del scoreSheet[bustedPlayer]
-        return scoreSheet
+    def deletBustedPlayers(self, bustedPlayer):#Receives a dict and a list, then delets every value of list in dict
+        del self.scoreSheet[bustedPlayer]
+        del self.playerCardList[bustedPlayer]
+        return self.scoreSheet
     
-    def dealerHit(self, scoreSheet):
-        if scoreSheet.get('dealer') == 0:
+    def dealerHit(self):
+        if self.scoreSheet.get('dealer') == 0:
             return 'h'
-        if scoreSheet.get('dealer') <= 11:
+        if self.scoreSheet.get('dealer') <= 11:
             return 'h'
         return 's'
 
-    def showResult(self, scoreSheet, winner,cardList):
-        for x in cardList:
-            print(f'{x} got the cards: {cardList.get(x)}')
-            print(f'{x} scored: {scoreSheet.get(x)}')
+    def showResult(self, winner):
+        for x in self.playerCardList:
+            print(f'{x} got the cards: {self.playerCardList.get(x)}')
+            print(f'{x} scored: {self.scoreSheet.get(x)}')
         print("----------------------")
         print(f"{winner}!")
         print("GAMEOVER")
     
-    def createCardDict(self,scoreSheet):
-        cardList = {}
-        for x in scoreSheet:
-            cardList[x] = []
-        return cardList
+    def createCardDict(self):
+        for x in self.scoreSheet:
+            self.playerCardList[x] = []
+    
+    def setup(self):
+        self.d.createDeck()
+        self.createPlayersScoreSheet()
+        self.createCardDict()
+    
+    def game(self, player):
+        if self.scoreSheet.get(player) == 0:
+            while True:
+                if player == 'dealer':
+                    ans = self.dealerHit()
+                else:
+                    ans = input(f"{player}'s turn hit or stand? (h/s): ")
+                    self.game(ans)
+                if ans.lower() == 'h':
+                    playerScore = self.hit(player)
+                    self.scoreSheet[player] += playerScore
+                    if self.checkBust(player):
+                        self.deletBustedPlayers(player)
+                        break
+                if ans.lower() == 's':
+                    if self.scoreSheet.get(player) == 0:
+                        self.deletBustedPlayers(player)
+                    break
 
     def mainGame (self):
-        self.d.createDeck()
-        scoreSheet = self.createPlayersScoreSheet()
-        playerCardList = self.createCardDict(scoreSheet)
+        self.setup()
         while True:
-            for player in scoreSheet:
-                if scoreSheet.get(player) == 0:
-                    while True:
-                        if player == 'dealer':
-                            ans = self.dealerHit(scoreSheet)
-                        else:
-                            ans = input(f"{player}'s turn hit or stand? (h/s): ")
-                        if ans.lower() == 'h':
-                            playerScore = self.hit(player,self.d.deck,playerCardList)
-                            scoreSheet[player] += playerScore
-                            if self.checkBust(scoreSheet,player):
-                                self.deletBustedPlayers(scoreSheet, player)
-                                break
-                        if ans.lower() == 's':
-                            if scoreSheet.get(player) == 0:
-                                self.deletBustedPlayers(scoreSheet, player)
-                            break
-                    if player not in scoreSheet: #If someone is busted, breaks for loop and loop back to the while loop at the top
-                        break
-            winner = self.checkWinner(scoreSheet)
+            for player in self.scoreSheet:
+                self.game(player)
+                if player not in self.scoreSheet: #If someone is busted, breaks for loop and loop back to the while loop at the top
+                    break
+            winner = self.checkWinner()
             if winner:
-                self.showResult(scoreSheet, winner, playerCardList)
+                self.showResult(winner)
                 return
 
 

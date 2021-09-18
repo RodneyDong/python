@@ -53,3 +53,29 @@ class Game{
 Game *-- Player
 Player *-- Dice
 ```
+
+```mermaid
+graph TB
+
+A[lowerSection]
+B{Yahtzee?}
+C{Large Straight}
+D{Small Straight}
+E{Full House}
+F{4 of a Kind}
+G{3 of a Kind}
+ADDUP[sum of all dices]
+A -->B
+B--False-->C
+C--False-->D
+D--False-->E
+E--False-->F
+F--False-->G
+B--True-->50point
+C--True-->40point
+D--True-->30point
+E--True-->25point
+F--True-->ADDUP
+G--True-->ADDUP
+
+```
