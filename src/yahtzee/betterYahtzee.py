@@ -48,9 +48,8 @@ class Player:
     def keep(self, keeps, keepDices):
         newValues = []
         for x in keeps:
-            if x in keepDices:
-                newValues.append(int(x))
-        return newValues + self.roll(len(newValues)-len(keepDices))
+            newValues.append(int(x))
+        return newValues + self.roll(len(keepDices)-len(newValues))
 
     def getScore(self):
         value = 0

@@ -9,6 +9,10 @@ class A:
 class B(A):
     pass
 
-b = B()
-c = '1'
-f = int(c)
+def player(a):
+    if a == '1':
+        return a
+ans = player('1')
+print(ans)
+if ans:
+    print("done")
