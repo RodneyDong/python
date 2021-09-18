@@ -56,7 +56,7 @@ class Game(Deck):
         values = self.scoreSheet.values()
         for x in list(values):
             if x == 0:
-                return False
+                return None
         for x in self.scoreSheet:
             if max(list(values)) == min(list(values)):
                 return "This round is a tie"
@@ -67,7 +67,6 @@ class Game(Deck):
         if self.scoreSheet.get(player) > 21:
             print(f'{player} is busted')
             return player
-        return False
 
     def createPlayersScoreSheet(self):
         self.scoreSheet['dealer'] = 0
@@ -84,7 +83,6 @@ class Game(Deck):
     def deletBustedPlayers(self, bustedPlayer):#Receives a dict and a list, then delets every value of list in dict
         del self.scoreSheet[bustedPlayer]
         del self.playerCardList[bustedPlayer]
-        return self.scoreSheet
     
     def dealerHit(self):
         if self.scoreSheet.get('dealer') == 0:
