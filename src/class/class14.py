@@ -1,4 +1,4 @@
-
+"Class internal function call another inter function"
 class Bag:
     def __init__(self):
         self.data = []

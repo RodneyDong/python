@@ -1,4 +1,4 @@
-
+""
 
 class Reverse:
     def __init__(self, data):

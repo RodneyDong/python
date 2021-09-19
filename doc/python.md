@@ -325,6 +325,7 @@ Person <|--Student:Is Relationship
 3. __new__() return an object
 4. __init__() return None
 [Good sample for voerride __new__](../src/class/class10.py)[Class enumeration for multiple items]
+[__iter__,__next__](../src/class/class15.py)
 
 ### attribute scope
 [class level attribute](../src/class/class11.py)
