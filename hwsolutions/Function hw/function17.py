@@ -15,7 +15,10 @@ def has_two_digits (a):
         if x.isdigit():
             count += 1
     return count >= 2
+<<<<<<< HEAD
+=======
 
+>>>>>>> 0dbc21e700ca75c118efdf059722f8b33a47bf3c
 def passwordCheck():
     while True:
         password = input("Input a password：")

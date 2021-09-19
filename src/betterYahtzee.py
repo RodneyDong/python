@@ -25,31 +25,20 @@ class Player:
         self.score = 0
         self.dices = Dices()
         self.records = []
-        self.newDices = []
     
     def __repr__(self):
         return ": ".join((self.name, str(self.score)))
 
     def addScore(self):
-        upperSectionScore = self.upperSection(self.records)
-        lowerSectionScore = self.lowerSection(self.records)
-        print(f"upper section score = {upperSectionScore}")
-        print(f"lower section score = {lowerSectionScore}")
-        ans = input("upper section (u) or lower section (l): ")
-        if ans.lower() == 'u':
-            self.score += upperSectionScore
-        if ans.lower() == 'l':
-            self.score += lowerSectionScore
         self.score += self.getScore()
     
     def roll(self, n=5):
         return self.dices.roll(n)
 
-    def keep(self, keeps, keepDices):
-        newValues = []
-        for x in keeps:
-            newValues.append(int(x))
-        return newValues + self.roll(len(keepDices)-len(newValues))
+    def keep(self, keeps):
+        for d in keeps:
+            self.records.append(int(d))
+        return self.roll(self.dices.n - len(self.records))
 
     def getScore(self):
         value = 0
@@ -60,44 +49,6 @@ class Player:
     def addRecords(self, more):
         for d in more:
             self.records.append(int(d))
-
-    def upperSection(self,data):
-        return sum(data)
-
-    def lowerSection(self,data):
-        if self.yahtzee(data):
-            return 50
-        if self.largeStraight(data):
-            return 40
-        if self.smallStraight(data):
-            return 30
-        if self.fullHouse(data):
-            return 25
-        return self.upperSection(data)
-
-    def kind(self,data): # return the number of same kind values
-        max = 0
-        for i in range(len(data)):
-            c = data.count(data[i])
-            if c > max: max = c
-        return max
-
-    def fullHouse(self, data):
-        return self.kind(data) == 3 and len(set(data)) == 2
-
-    def smallStraight(self,data):
-        s = set(data)
-        list1=[{1,2,3,4},{2,3,4,5},{3,4,5,6},{1,3,4,5,6},{1,2,3,4,6}]
-        return s in list1
-
-    def largeStraight(self,data):
-        s1,s2 = {1,2,3,4,5},{2,3,4,5,6}
-        return set(data) in [s1,s2]
-
-    def yahtzee(self,data):
-        return len(set(data))==1
-
-
 
 class Game:
     def __init__(self, rounds=1): # open for future change
@@ -131,7 +82,7 @@ class Game:
                         break
                     answer = input("select dices to keep: for example> 6, 4: ")
                     keeps = answer.split(",")
-                    newRoll = player.keep(keeps, newRoll)
+                    newRoll = player.keep(keeps)
                     print(f"{player.name}: {newRoll}")                
                     round += 1
                 player.addRecords(newRoll)

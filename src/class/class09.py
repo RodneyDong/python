@@ -12,7 +12,7 @@ class A:
         print("__init__ is called")
         self.name = name
 
-    def __repr__(self):
+    def __repr__(self): # return a string representate
         return self.name
 
     def add(self, x, y):

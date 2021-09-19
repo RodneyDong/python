@@ -13,7 +13,10 @@
 - [Loop](#loop)
 - [Function](#function)
 - [OOP (object oriented programming)](#oop-object-oriented-programming)
-
+  - [class basic:](#class-basic)
+  - [dunder function](#dunder-function)
+  - [attribute scope](#attribute-scope)
+  - [class tricks](#class-tricks)
 
 
 ## python language basics
@@ -236,9 +239,7 @@ that is used to perform a single, related action.
     - 💡Single response, do single thing
     - ❗️❗️call a function by function name and () no matter it has arguments or not, and arguments if thers is any
 
-$$
-\underbrace {def}_{keyword} \underbrace {circle \_area}_{function \space name} \left(\underbrace {a, b,c ...}_{positional\; args} * \underbrace {e=None, f=200}_{keyword\;args}\right) \underbrace {:}_{eol}
-$$
+$$\underbrace {def}_{keyword} \underbrace {circle \_area}_{function \space name} \left(\underbrace {a, b,c ...}_{positional\; args} * \underbrace {e=None, f=200}_{keyword\;args}\right) \underbrace {:}_{eol}$$
 
 * [function.py](../src/function.py)
 * [argument.py](../src/argument.py)
@@ -250,6 +251,31 @@ $$
 * [return function dynamically](../src/returnFunction.py)
 >part of Functional programming which focus on goal
 * [Functional programming basic](../src/passFunction.py)
+## Unittest
+❓ What is unittest?
+✔️A unit is a specific piece of code to be tested, such as a function or a class. Unit tests are then other pieces of code that specifically exercise the code unit with a full range of different inputs, including boundary and edge cases.* 
+
+* 😢👎unittest cannot find the file unless
+    1. test file name match the pattern
+    2. test file located on right folder
+    3. unittest always find test file from current running folder
+    4. 👎module and function can be found in the module
+    5. 👎module must be no compiler error
+    6. make sure there is no typo on module
+```py
+import unittest
+from src.circle import circleArea
+from math import pi
+
+class TestCircleArea(unittest.TestCase): # must inherits from unittest.TestCase
+    def test_area(self):
+        self.assertEqual(pi,circleArea(1))
+        self.assertEqual(0,circleArea(0))
+        self.assertEqual(16.619025137490002,circleArea(2.3))
+```
+
+* Configure unittest in VS code:
+Right-Click inside Editor window > Command Palette... > Python Configure Test > unittest > test_*.py 
 
 ## OOP (object oriented programming)
 [](images/oop.png)
@@ -275,13 +301,14 @@ class Student{
 }
 Person <|--Student:Is Relationship
 ```
-[](../src/class/student.py)
+[inheritence](../src/class/student.py)
+
 ❓What is encapsulation?
 ✔️A private variable that cannot be accessed outside, so the attribute canot be changed
 
 ❓What is polymorphism?
 ✔️
-## class basic:
+### class basic:
 [Simple Class](../src/class/class01.py)
 [Define a function outside of class](../src/class/class02.py)
 [Define a function inside class and self](../src/class/class03.py)
@@ -290,10 +317,20 @@ Person <|--Student:Is Relationship
 [Encapsulation](../src/class/class07.py)
 [use property](../src/class/class08.py)
 
-## dunder function
+### dunder function
 [__repr_(), __str__(), __len__()](../src/class/class06.py)
 [understand __new__(), __init__()](../src/class/class09.py)
 1. avoid override __new__(cls)
 2. if you do, make sure it is the same argument as __init__()
 3. __new__() return an object
 4. __init__() return None
+[Good sample for voerride __new__](../src/class/class10.py)[Class enumeration for multiple items]
+
+### attribute scope
+[class level attribute](../src/class/class11.py)
+[instance level attribute](../src/class/class12.py)
+[class level constant attribute](../src/class/enum1.py)
+
+### class tricks
+[define outside function for class](../src/class/class13.py)
+[internal function call another internal function](../src/class/class14.py)
