@@ -251,6 +251,31 @@ $$\underbrace {def}_{keyword} \underbrace {circle \_area}_{function \space name}
 * [return function dynamically](../src/returnFunction.py)
 >part of Functional programming which focus on goal
 * [Functional programming basic](../src/passFunction.py)
+## Unittest
+❓ What is unittest?
+✔️A unit is a specific piece of code to be tested, such as a function or a class. Unit tests are then other pieces of code that specifically exercise the code unit with a full range of different inputs, including boundary and edge cases.* 
+
+* 😢👎unittest cannot find the file unless
+    1. test file name match the pattern
+    2. test file located on right folder
+    3. unittest always find test file from current running folder
+    4. 👎module and function can be found in the module
+    5. 👎module must be no compiler error
+    6. make sure there is no typo on module
+```py
+import unittest
+from src.circle import circleArea
+from math import pi
+
+class TestCircleArea(unittest.TestCase): # must inherits from unittest.TestCase
+    def test_area(self):
+        self.assertEqual(pi,circleArea(1))
+        self.assertEqual(0,circleArea(0))
+        self.assertEqual(16.619025137490002,circleArea(2.3))
+```
+
+* Configure unittest in VS code:
+Right-Click inside Editor window > Command Palette... > Python Configure Test > unittest > test_*.py 
 
 ## OOP (object oriented programming)
 [](images/oop.png)
