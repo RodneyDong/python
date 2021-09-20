@@ -25,22 +25,21 @@ class Player:
         self.score = 0
         self.dices = Dices()
         self.records = []
-        self.newDices = []
     
     def __repr__(self):
         return ": ".join((self.name, str(self.score)))
 
-    def addScore(self):
+    def addScore(self, unit=False, ans='u'):
         upperSectionScore = self.upperSection(self.records)
         lowerSectionScore = self.lowerSection(self.records)
         print(f"upper section score = {upperSectionScore}")
         print(f"lower section score = {lowerSectionScore}")
-        ans = input("upper section (u) or lower section (l): ")
+        if not unit:
+            ans = input("upper section (u) or lower section (l): ")
         if ans.lower() == 'u':
             self.score += upperSectionScore
         if ans.lower() == 'l':
             self.score += lowerSectionScore
-        self.score += self.getScore()
     
     def roll(self, n=5):
         return self.dices.roll(n)
@@ -52,14 +51,10 @@ class Player:
         return newValues + self.roll(len(keepDices)-len(newValues))
 
     def getScore(self):
-        value = 0
-        for i in range(len(self.records)):
-            value += self.records[i]
-        return value
+        return self.score
 
-    def addRecords(self, more):
-        for d in more:
-            self.records.append(int(d))
+    def setRecords(self, round):
+        self.records = round
 
     def upperSection(self,data):
         return sum(data)
@@ -97,10 +92,8 @@ class Player:
     def yahtzee(self,data):
         return len(set(data))==1
 
-
-
 class Game:
-    def __init__(self, rounds=1): # open for future change
+    def __init__(self, rounds=13): # open for future change
         self.rounds = rounds
         self.playerList = []
 
@@ -119,29 +112,29 @@ class Game:
             print(player)
 
     def play(self):
-        roundCount = 0
-        while roundCount < self.rounds:
+        roundCount = 1
+        while roundCount <= self.rounds:
             for player in self.playerList:
-                newRoll = player.roll()
+                print("Round", roundCount)
+                newRoll = player.roll() # newRoll: list of 5 dice values
                 print(f"{player.name}: {newRoll}")
-                round = 1
+                round = 1 # count 3 try
                 while round<3:
                     answer = input(f"{player.name}, try again? (y/n) ")
                     if answer=='n':
                         break
                     answer = input("select dices to keep: for example> 6, 4: ")
-                    keeps = answer.split(",")
+                    keeps = answer.split(",") # list of values to keep
                     newRoll = player.keep(keeps, newRoll)
                     print(f"{player.name}: {newRoll}")                
                     round += 1
-                player.addRecords(newRoll)
+                player.setRecords(newRoll)
                 player.addScore()
             roundCount += 1
         self.showResult()
         print("Game Over!")
 
-
 if __name__ == '__main__':
-    game = Game()
+    game = Game(2)
     game.addPlayer()
     game.play()
