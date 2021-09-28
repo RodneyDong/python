@@ -67,7 +67,7 @@ class Dealer {
 }
 
 class Game{
-  playerList:[]
+  playerList:ArrayList<Player>
   dealer:Dealer
   determineWinner()
   play()
@@ -87,7 +87,7 @@ Game *-- Player
 ```mermaid
 graph TB
 A([start])
-INIT["init() <br> 2 cards for all player"]
+INIT["init()"]
 B[Deal cards]
 C[Show hands]
 D{hit?}
